@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCooking.BLL", "MyCooking\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCooking.DAL", "MyCooking\MyCooking.DAL\MyCooking.DAL.csproj", "{72C01856-9362-47FD-A866-B7D60F4624A5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Etapa03", "Etapa03", "{7AE5F5B8-06F4-4C60-A9E6-5DEF0BF00032}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnderstandingControllersViews", "UnderstandingControllersViews\UnderstandingControllersViews.csproj", "{5769F822-09A9-4712-BF98-BF7312BF9261}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{72C01856-9362-47FD-A866-B7D60F4624A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C01856-9362-47FD-A866-B7D60F4624A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72C01856-9362-47FD-A866-B7D60F4624A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5769F822-09A9-4712-BF98-BF7312BF9261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5769F822-09A9-4712-BF98-BF7312BF9261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5769F822-09A9-4712-BF98-BF7312BF9261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5769F822-09A9-4712-BF98-BF7312BF9261}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +61,7 @@ Global
 		{8B2BD71B-B593-4369-9E56-5102A0421FA9} = {05E26BEA-6D30-48D2-9B32-BB0624F8093D}
 		{240F4E25-0C48-4FC7-A436-1170FBA4AF57} = {05E26BEA-6D30-48D2-9B32-BB0624F8093D}
 		{72C01856-9362-47FD-A866-B7D60F4624A5} = {05E26BEA-6D30-48D2-9B32-BB0624F8093D}
+		{5769F822-09A9-4712-BF98-BF7312BF9261} = {7AE5F5B8-06F4-4C60-A9E6-5DEF0BF00032}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA1C69EA-BF2B-4F9A-B14F-5BC7555EBD25}

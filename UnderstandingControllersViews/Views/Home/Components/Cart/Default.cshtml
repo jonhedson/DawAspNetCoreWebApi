@@ -1,0 +1,16 @@
+﻿@model Product[]
+<table style="width:50%">
+    <tr>
+        <td><u>Product Name</u></td>
+        <td><u>Price</u></td>
+    </tr>
+    @{
+        foreach (Product p in Model)
+        {
+            <tr>
+                <td>@p.name</td>
+                <td>@p.price</td>
+            </tr>
+        }
+    }
+</table>

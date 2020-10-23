@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    @section Top {
+        This is Top
+    }
+
+    <div style= "color: blue;border: 1px solid #b6ff00">
+        @await Component.InvokeAsync("Cart") 
+    </div>
+    <div>
+
+        <h2>TestLayout starts here</h2>
+        <p>This text is coming from child view</p>
+    </div>
+
+    @await Html.PartialAsync("TestPartialView", new List<string> { "Classic ASP" ,
+"ASP.NET Web Forms" , "ASP.NET MVC" , "ASP.NET Core MVC" }) 
+
+    @section Script {
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    }
+
+    @section Bottom {
+        This is Bottom
+    }
+</body>
+</html>
