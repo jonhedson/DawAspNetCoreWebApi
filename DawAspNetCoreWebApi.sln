@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Etapa05", "Etapa05", "{BA1B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIControllers", "APIControllers\APIControllers.csproj", "{C1FEBBDD-A2F4-4A59-B46D-CBE92A62DF79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiConsume", "ApiConsume\ApiConsume.csproj", "{7F126C37-8CD5-4156-958A-48FC932120F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiConsume", "ApiConsume\ApiConsume.csproj", "{7F126C37-8CD5-4156-958A-48FC932120F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

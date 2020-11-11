@@ -9,11 +9,13 @@ using Microsoft.AspNetCore.Hosting;
 using System.Threading.Tasks;
 using System.IO;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace APIControllers.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    //[Authorize]
     public class ReservationController : ControllerBase
     {
         private IRepository repository;
@@ -61,7 +63,7 @@ namespace APIControllers.Controllers
         public Reservation Put([FromForm] Reservation res) => repository.UpdateReservation(res);
 
         [HttpPatch("{id}")]
-        public StatusCodeResult Patch(int id, [FromBody]JsonPatchDocument<Reservation> patch)
+        public StatusCodeResult Patch(int id, [FromBody] JsonPatchDocument<Reservation> patch)
         {
             Reservation res = Get(id);
             if (res != null)

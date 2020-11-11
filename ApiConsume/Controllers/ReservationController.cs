@@ -95,6 +95,7 @@ namespace ApiConsume.Controllers
                 content.Add(new StringContent(reservation.StartLocation), "StartLocation");
                 content.Add(new StringContent(reservation.EndLocation), "EndLocation");
 
+
                 using (var response = await httpClient.PutAsync("http://localhost:8888/api/Reservation", content))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
