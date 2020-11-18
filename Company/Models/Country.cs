@@ -11,5 +11,6 @@ namespace Company.Models
         public string Name { get; set; }
         public int Population { get; set; }
         public DateTime AddedOn { get; set; }
+        public ICollection<City> City { get; set; }
     }
 }

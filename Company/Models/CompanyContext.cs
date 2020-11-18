@@ -15,7 +15,8 @@ namespace Company.Models
         public DbSet<Department> Department { get; set; }
         public DbSet<Employee> Employee { get; set; }
         public DbSet<Information> Information { get; set; }
-
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<City> Cities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,7 +24,7 @@ namespace Company.Models
             modelBuilder.Entity<Country>()
                 .HasKey(s => s.PId);
 
-            //Property Configurations
+            //Property Configurations Country
             modelBuilder.Entity<Country>(entity =>
             {
                 entity.Property(e => e.Name)
@@ -38,8 +39,8 @@ namespace Company.Models
             });
 
             modelBuilder.Entity<Country>().Ignore(e => e.Population);
-            
 
+            //Property Configurations Department
             modelBuilder.Entity<Department>(entity =>
             {
                 entity.Property(e => e.Name)
@@ -48,6 +49,7 @@ namespace Company.Models
                     .IsUnicode(false);
             });
 
+            //Property Configurations Employee
             modelBuilder.Entity<Employee>(entity =>
             {
                 entity.Property(e => e.Designation)
@@ -66,6 +68,14 @@ namespace Company.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Employee_Department");
             });
+
+            modelBuilder.Entity<City>()
+                .HasOne(e => e.Country)
+                .WithMany(e => e.City)
+                .HasForeignKey(e => e.FKCountry)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
         }
     }
 
