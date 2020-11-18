@@ -14,9 +14,12 @@ namespace Company.Models
 
         public DbSet<Department> Department { get; set; }
         public DbSet<Employee> Employee { get; set; }
+
         public DbSet<Information> Information { get; set; }
+
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<CityInformation> CityInformations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -69,11 +72,31 @@ namespace Company.Models
                     .HasConstraintName("FK_Employee_Department");
             });
 
+            //Property Configurations City
+            modelBuilder.Entity<City>()
+                .HasOne(e => e.CityInformation)
+                .WithOne(e => e.City)
+                .HasForeignKey<City>(e => e.CityInformationId);
+
             modelBuilder.Entity<City>()
                 .HasOne(e => e.Country)
                 .WithMany(e => e.City)
                 .HasForeignKey(e => e.FKCountry)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            //Property Configurations TeacherStudent
+            modelBuilder.Entity<TeacherStudent>()
+                        .HasKey(t => new { t.StudentId, t.TeacherId });
+
+            modelBuilder.Entity<TeacherStudent>()
+                        .HasOne(t => t.Student)
+                        .WithMany(t => t.TeacherStudent)
+                        .HasForeignKey(t => t.StudentId);
+
+            modelBuilder.Entity<TeacherStudent>()
+                        .HasOne(t => t.Teacher)
+                        .WithMany(t => t.TeacherStudent)
+                        .HasForeignKey(t => t.TeacherId);
 
 
         }

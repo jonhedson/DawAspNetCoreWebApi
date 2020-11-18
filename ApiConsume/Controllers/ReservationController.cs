@@ -17,6 +17,7 @@ namespace ApiConsume.Controllers
             List<Reservation> reservationList = new List<Reservation>();
             using (var httpClient = new HttpClient())
             {
+
                 using (var response = await httpClient.GetAsync("http://localhost:8888/api/Reservation"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
