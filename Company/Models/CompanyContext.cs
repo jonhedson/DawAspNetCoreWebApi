@@ -17,19 +17,29 @@ namespace Company.Models
         public DbSet<Information> Information { get; set; }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                /*optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; " +
-                    "Initial Catalog = Company; Integrated Security = True; Connect Timeout = 30; " +
-                    "Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite;" +
-                    " MultiSubnetFailover = False");*/
-            }
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Entity Configuration
+            modelBuilder.Entity<Country>()
+                .HasKey(s => s.PId);
+
+            //Property Configurations
+            modelBuilder.Entity<Country>(entity =>
+            {
+                entity.Property(e => e.Name)
+                      .HasColumnName("CountryName")
+                      .HasDefaultValue("USA")
+                      .IsRequired();
+
+                entity.Property(e => e.AddedOn)
+                        .HasColumnType("date")
+                        .HasDefaultValue("(getdate())");
+
+            });
+
+            modelBuilder.Entity<Country>().Ignore(e => e.Population);
+            
+
             modelBuilder.Entity<Department>(entity =>
             {
                 entity.Property(e => e.Name)
@@ -55,8 +65,6 @@ namespace Company.Models
                     .HasForeignKey(d => d.DepartmentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Employee_Department");
-
-
             });
         }
     }
