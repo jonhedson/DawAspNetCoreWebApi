@@ -37,7 +37,7 @@ namespace Company.Models
 
                 entity.Property(e => e.AddedOn)
                         .HasColumnType("date")
-                        .HasDefaultValue("(getdate())");
+                        .HasDefaultValueSql("getdate()");
 
             });
 

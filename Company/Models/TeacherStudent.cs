@@ -9,7 +9,7 @@ namespace Company.Models
     {
         public int StudentId { get; set; } //foreign key property
         public Student Student { get; set; } //Reference navigation property
-        public Teacher TeacherId { get; set; }//foreign key property
+        public int TeacherId { get; set; }//foreign key property
         public Teacher Teacher { get; set; }
     }
 }
