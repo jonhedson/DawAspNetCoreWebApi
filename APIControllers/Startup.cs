@@ -22,28 +22,28 @@ namespace APIControllers
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
                 .AddJwtBearer(options =>
-               {
-                   options.SaveToken = true;
-                   options.RequireHttpsMetadata = false;
-                   options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
-                   {
-                       ValidateIssuer = true,
-                       ValidateAudience = true,
-                       ValidAudience = "https://www.infnet.edu.br",
-                       ValidIssuer = "https://www.infnet.edu.br",
-                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MynameisJamesBond007"))
-                   };
-               });
+                {
+                    options.SaveToken = true;
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidAudience = "https://www.infnet.edu.br",
+                        ValidIssuer = "https://www.infnet.edu.br",
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MynameisJamesBond007"))
+                    };
+                });
 
             services.AddSingleton<IRepository, Repository>();
 
             //services.AddCors();
             /*services.AddControllersWithViews().AddNewtonsoftJson();*/
             services.AddControllersWithViews();
-                //.AddNewtonsoftJson()
-                //.AddXmlDataContractSerializerFormatters();
+            //.AddNewtonsoftJson()
+            //.AddXmlDataContractSerializerFormatters();
         }
-        
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -60,7 +60,7 @@ namespace APIControllers
             });*/
 
             app.UseHttpsRedirection();
-            
+
             app.UseStaticFiles();
             app.UseRouting();
 

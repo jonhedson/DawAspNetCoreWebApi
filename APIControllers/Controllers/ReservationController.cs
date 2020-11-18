@@ -15,7 +15,7 @@ namespace APIControllers.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[Authorize]
+    [Authorize]
     public class ReservationController : ControllerBase
     {
         private IRepository repository;
