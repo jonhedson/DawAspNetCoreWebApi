@@ -1,11 +1,7 @@
 ﻿using Company.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace Company.Controllers
@@ -19,7 +15,12 @@ namespace Company.Controllers
             context = cc;
         }
 
-        public string Index()
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public string Index1()
         {
 
             var dept = new Department()

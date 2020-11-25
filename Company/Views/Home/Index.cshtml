@@ -1,8 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Insert Records</h2>
+<p><a href="/Insert/InsertSingle">Insert Single</a></p>
+<p><a href="/Insert/InsertSingleAsyn">Insert Single Asynchronous</a></p>
+<p><a href="/Insert/InsertMultiple">Insert Multiple</a></p>
+<p><a href="/Insert/InsertRelated">Insert Related</a></p>
+
+
+<h2>Read Records</h2>
+<p><a href="/Read/Index">Simple Read</a></p>
+<p><a href="/Read/EagerRead">Eager Read</a></p>
+<p><a href="/Read/ExplicitRead">Explicit Read</a></p>
+<p><a href="/Read/LazyRead">Lazy Read</a></p>
+
+
+<h2>Update Records</h2>
+<p><a href="/Update/UpdateSingle">Update Single</a></p>
+<p><a href="/Update/UpdateMultiple">Update Multiple</a></p>
+<p><a href="/Update/UpdateRelated">Update Related</a></p>
+
+
+
+
+<h2>Delete Records</h2>
+<p><a href="/Delete/DeleteSingle">Delete Single</a></p>
+<p><a href="/Delete/DeleteMultiple">DeleteMultiple</a></p>
+<p><a href="/Delete/DeleteRelated">Delete Related</a></p>

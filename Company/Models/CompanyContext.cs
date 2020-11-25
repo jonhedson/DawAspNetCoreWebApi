@@ -68,7 +68,7 @@ namespace Company.Models
                 entity.HasOne(d => d.Department)
                     .WithMany(p => p.Employee)
                     .HasForeignKey(d => d.DepartmentId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_Employee_Department");
             });
 
