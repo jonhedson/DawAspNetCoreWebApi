@@ -14,7 +14,7 @@ namespace Company.Controllers
             context = cc;
         }
 
-        public async Task<IActionResult> UpdateSingle()
+        public async Task<IActionResult> Update()
         {
 
             var dept = new Department()
